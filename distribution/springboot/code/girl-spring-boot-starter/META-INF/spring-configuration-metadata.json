@@ -1,0 +1,9 @@
+{
+  "groups": [
+    {
+      "name": "com.girl",
+      "type": "com.example.demo.GirProperties",
+      "sourceType": "com.example.demo.GirProperties"
+    }
+  ]
+}

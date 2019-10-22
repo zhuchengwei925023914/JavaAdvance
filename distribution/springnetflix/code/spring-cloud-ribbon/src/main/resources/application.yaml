@@ -1,0 +1,11 @@
+
+
+server-demo:
+  ribbon:
+    listOfServers: localhost:8081, localhost:8082
+server:
+  port: 8089
+logging:
+  level:
+    com.netflix: debug
+

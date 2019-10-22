@@ -80,18 +80,18 @@ sudo pip install -U docker-compose
 6. 在项目根目录下编写docker-compose.yml文件，这个是Compose使用的主模版文件。
 
    ```yaml
-   version:'3.4'
+   version: '3.4'
    services:
    	zk_server:
-   		image:zookeeper:3.4
-   		ports:
-   			-2181:2181
+       image: zookeeper:3.4
+       ports:
+         - 2181:2181
    	dubbo-admin:
-   		image:dubbo-admin:1.0
-   		links:
-   			-zk_server:zookeeper
-   		ports:
-   			-7001:7001
+       image: dubbo-admin:1.0
+       links:
+        - zk_server:zookeeper
+       ports:
+        - 7001:7001
    ```
 
 7. 在docker-compose.yml文件所在目录执行：

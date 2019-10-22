@@ -1,0 +1,8 @@
+
+com:
+  girl:
+    face: good
+    name: xiaohong
+    height: 173
+server:
+  port: 8090

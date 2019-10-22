@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: server-demo1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+logging:
+  level:
+    org.springframework.cloud: debug
+    com.netflix: debug
+

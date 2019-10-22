@@ -1,0 +1,10 @@
+
+server:
+  port: 8085
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+spring:
+  application:
+    name: consumer-demo
