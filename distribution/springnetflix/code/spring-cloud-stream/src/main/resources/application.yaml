@@ -1,0 +1,47 @@
+server:
+  port: 8007
+logging:
+  level:
+    root: warn
+    org.springframework: INFO
+    org.springframework.cloud: INFO
+    org.springframework.interation: INFO
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+  cloud:
+    stream:
+      binders:
+        rabbit1:
+          type: rabbit
+          environment:
+            spring:
+              rabbit:
+                host: localhost
+                port: 5672
+                usernane: guest
+                password: guest
+                publisher-confirms: true
+      bindings:
+        input:
+          binder: rabbit1
+          destination: things1
+          content-type: application/user
+        output:
+          binder: rabbit1
+          destination: things1
+          content-type: application/user
+        myInput:
+          binder: rabbit1
+          destination: things1
+        myOuput:
+          binder: rabbit1
+          destination: things1
+        springCloudBusOutput:
+          binder: rabbit1
+        springCloudBusInput:
+          binder: rabbit1

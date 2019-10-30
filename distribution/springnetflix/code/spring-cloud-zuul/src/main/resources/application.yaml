@@ -1,0 +1,38 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: zuul-demo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10000/eureka
+zuul:
+  host:
+    connect-timeout-millis: 2000
+    socket-timeout-millis: 1000
+    max-total-connections: 200
+    max-per-route-connections: 20
+  ribbon-isolation-strategy: semaphore
+  semaphore:
+    max-semaphores: 100
+  routes:
+    route1:
+      path: /kane/**
+      url: http://localhost:8081
+    route2:
+      path: /tony/**
+      serviceId: server-demo1
+
+study:
+  zuul:
+    token-filter:
+      noAuthenticationRoutes: user-token
+
+token:
+  jwt:
+    key: nick123
+    iss: 11
+    expm: 10
+
+
