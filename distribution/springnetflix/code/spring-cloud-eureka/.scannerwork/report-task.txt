@@ -1,0 +1,6 @@
+projectKey=spring-cloud-eureka
+serverUrl=http://192.168.1.24:9000/sonarQube
+serverVersion=6.7.7.38951
+dashboardUrl=http://192.168.1.24:9000/sonarQube/dashboard/index/spring-cloud-eureka
+ceTaskId=AW5lQ5zMdKisp4tvZ9cj
+ceTaskUrl=http://192.168.1.24:9000/sonarQube/api/ce/task?id=AW5lQ5zMdKisp4tvZ9cj

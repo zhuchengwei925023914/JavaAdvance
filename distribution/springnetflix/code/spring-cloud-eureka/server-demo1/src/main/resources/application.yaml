@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: server-demo1
+  zipkin:
+    base-url: http://localhost:9411
 eureka:
   client:
     service-url:
@@ -12,4 +14,3 @@ logging:
   level:
     org.springframework.cloud: debug
     com.netflix: debug
-

@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        prefix: config
+        profile-separator: '::'
+        watch:
+          enabled: true

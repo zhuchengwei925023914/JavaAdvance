@@ -1,0 +1,57 @@
+server:
+  port: 5002
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: /learnRes/Java/seniorjava/JavaAdvance/distribution/springcloud/code/spring-cloud-config-server/src/main/resources/configs
+        encrypt:
+          enabled: true
+    bus:
+      destination: bus-q
+      trace:
+        enabled: true
+    stream:
+      binders:
+        rabbit1:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+                publisher-confirms: true
+      bindings:
+        myInput:
+          binder: rabbit1
+          destination: things1
+        myOutput:
+          binder: rabbit1
+          destination: things1
+        springCloudBusOutput:
+          binder: rabbit1
+        spirngCloudBusInput:
+          binder: rabbit1
+
+  application:
+    name: config-server
+
+#security:
+#  user:
+#    name: root
+#    password: 1234567
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/
+
+

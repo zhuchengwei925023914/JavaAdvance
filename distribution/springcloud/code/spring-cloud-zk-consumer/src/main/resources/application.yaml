@@ -1,0 +1,5 @@
+server:
+  port: 9092
+logging:
+  level:
+    org.apache.zookeeper.ClientCnxn: WARN
